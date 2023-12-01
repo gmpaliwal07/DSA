@@ -1,2 +1,3 @@
-Before Reverse :This is Earth
-After reverse :Earth is This
+abc d defg 
+abcddefg 
+true
