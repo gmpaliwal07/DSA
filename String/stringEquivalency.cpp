@@ -21,7 +21,7 @@ int main(int argc, char const *argv[])
     freopen("output.txt", "w", stdout);
     #endif
     vector<string> word1;
-    vector<string> word2;
+    vector<string> word2; 
     int n, m;
     cin >> n >> m;
     for(auto i = 0 ; i < n; i++) {
