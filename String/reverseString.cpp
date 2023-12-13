@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 string reverseString(string str) {
     stack<string> st;
     string s = "";
@@ -34,8 +35,10 @@ int main(int argc, char const *argv[])
     freopen("output.txt", "w", stdout);
     #endif
     string str;
-    getline(cin, str);
+    getline(cin, str);  // to take long inputs with space
     cout <<  "Before Reverse :" << str << endl;
     cout << "After reverse :" << reverseString(str) ;
+    
+   
 return 0;
 }
