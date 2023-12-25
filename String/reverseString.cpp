@@ -38,7 +38,5 @@ int main(int argc, char const *argv[])
     getline(cin, str);  // to take long inputs with space
     cout <<  "Before Reverse :" << str << endl;
     cout << "After reverse :" << reverseString(str) ;
-    
-   
 return 0;
 }

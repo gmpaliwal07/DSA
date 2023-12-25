@@ -8,20 +8,37 @@ using namespace std;
 //     }
 // }
 // based on ASCII
-bool palindrome(string s) {
-  int n  =s.length();
-  int start = 0;
-  int end = n-1;
+// bool palindrome(string s) {
+//   int n  =s.length();
+//   int start = 0;
+//   int end = n-1;
+//   while (start < end)
+//   {
+//     while(start < end && !isalnum(s[start])) start++;
+//     while(start < end && !isalnum(s[end])) end--;
+     
+//     if(tolower(s[start]) != tolower( s[end])) return false;
+//     start++;
+//     end --;
+//   }
+//   return true;
+// }
+
+string Reverse(string s) {
+  string rev ;
+  int start =0;
+  int end = s.length()-1;
   while (start < end)
   {
-    while(start < end && !isalnum(s[start])) start++;
-    while(start < end && !isalnum(s[end])) end--;
-     
-    if(tolower(s[start]) != tolower( s[end])) return false;
-    start++;
-    end --;
+    swap(s[start++], s[end--]);
   }
-  return true;
+  rev = s;
+return rev;
+}
+bool palindrome(string s) {
+  string str = Reverse(s);
+  if(s != str) return false;
+  else return true;
 }
 int main(int argc, char const *argv[])
 {
