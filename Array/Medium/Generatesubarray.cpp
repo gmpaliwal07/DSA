@@ -3,7 +3,7 @@ using namespace std;
 void GenerateSubArray(vector<int> arr) {
     for(auto i = 0; i < arr.size(); i++) {
         for(auto j = i; j < arr.size(); j++) {
-             for (size_t k = i; k <= j; ++k) { 
+             for (auto k = i; k <= j; ++k) { 
                 cout << arr[k] << " ";
             }
             cout << endl;
