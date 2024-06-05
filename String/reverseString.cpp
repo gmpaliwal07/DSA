@@ -24,7 +24,7 @@ string reverseString(string str) {
     }
     
     ans += st.top();
-    
+  
     return ans;
 }
 
