@@ -25,5 +25,6 @@ for(auto i = 0; i < n; i++){
     arr.push_back(a);
 }
 GenerateSubArray(arr);
+
 return 0;
 }
