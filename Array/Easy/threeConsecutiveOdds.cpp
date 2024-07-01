@@ -6,8 +6,13 @@ bool threeCOnsecutiveOdds(vector<int> &arr) {
         if(it%2 != 0) {
             cnt++;
         }
+        else {
+            cnt =0;
+        }
+        if(cnt == 3) return true;
+    
     }
-    if(cnt > 1) return true;
+    
     return false;
 }
 int main(int argc, char const *argv[])
