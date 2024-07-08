@@ -35,6 +35,6 @@ freopen("output.txt","w", stdout);
 #endif
 vector<int> arr = {3,6,7,11};
 int h = 8;
-
+cout << minEatingSpeed(arr, h);
 return 0;
 }
