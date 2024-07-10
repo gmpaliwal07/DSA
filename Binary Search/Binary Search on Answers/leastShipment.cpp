@@ -25,11 +25,9 @@ int leastShipment(vector<int> &arr, int d) {
         int mid = (low + high) / 2;
         int numberOfDays = Days(arr, mid);
         if (numberOfDays <= d) {
-            //eliminate right half
             high = mid - 1;
         }
         else {
-            //eliminate left half
             low = mid + 1;
         }
     }
