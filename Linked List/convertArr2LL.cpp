@@ -32,6 +32,7 @@ Node *convertArr2LL(vector<int> &arr)
     }
     return head;
 }
+
 int main(int argc, char const *argv[])
 {
 #ifndef ONLINE_JUDGE
