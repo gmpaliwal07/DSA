@@ -9,6 +9,13 @@ using namespace std;
       TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
       TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
   };
+  void printVector(const vector<int>& vec) {
+
+    for (int num : vec) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
 vector<vector<int>> levelOrder(TreeNode* root) {
      vector<vector<int>> ans; 
         if (root == nullptr) {
@@ -54,10 +61,11 @@ freopen("output.txt", "w" ,stdout);
     root->left->left = new TreeNode(4);
     root->left->right = new TreeNode(5);
 
-    vector<int> result = inorderTraversal(root);
+     vector<vector<int>> result = levelOrder(root); 
 
-    for (int val : result) {
-        cout << val << " ";
+
+    for (const vector<int>& level : result) {
+        printVector(level);
     }
 
     // Clean up memory
