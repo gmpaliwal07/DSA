@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-// Define a Node class for doubly linked list
 class Node {
 public:
     int data;   
@@ -34,15 +33,15 @@ Node* convertArr2DLL(vector<int> arr) {
 
 void print(Node* head) {
     while (head != nullptr) {
-        cout << head->data << " ";  
-        head = head->next;         
+        cout << head->data << " ";
+        head = head->next;
     }
 }
 Node* insertNode(Node *head, int k) {
-Node* newNode = new Node(k);
- if(head == NULL ){
+    Node* newNode = new Node(k);
+        if(head == NULL ){
         return newNode;
-    }
+        }
 
     Node* tail = head;
     while (tail->next !=nullptr){

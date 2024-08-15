@@ -25,8 +25,6 @@ Node* convertArr2DLL(vector<int> arr) {
     Node* prev = head;             
     for (int i = 1; i < arr.size(); i++) {
         Node* temp = new Node(arr[i], nullptr, prev);
-
-
         prev->next = temp;    
    
        prev = temp;         
@@ -43,43 +41,29 @@ void print(Node* head) {
 }
 
 Node* deleteHead(Node* head) {
-    if (head == nullptr || head->next == nullptr) {
-
-        return nullptr; 
+    if(head == nullptr || head->next == nullptr) {
+        return NULL;
     }
-    Node* prev = head;      
-    head = head->next;    
-
-    head->back = nullptr;   
-
- // Set 'next' pointer of 'prev' to nullptr
-    prev->next = nullptr;  
-
-   // Return the new head
-    return head;          
+    Node* prev = head;
+    head = head->next;
+    head->back ==  nullptr;
+    head->next == nullptr;
+    delete prev; // in java we don't have to write this 
+    return head; 
 }
-
-// Function to delete the tail of the doubly linked list
 Node* deleteTail(Node* head) {
-    if (head == nullptr || head->next == nullptr) {
-     // If the list is empty or has only one node, return null
-        return nullptr;  
-    }
-    
+    if(head == nullptr || head->next == nullptr) return nullptr;
     Node* tail = head;
-    while (tail->next != nullptr) {
-     // Traverse to the last node (tail)
-        tail = tail->next; 
+    while (tail->next !=nullptr)
+    {
+        tail= tail->next;
     }
-    
-    Node* newTail = tail->back;
-    newTail->next = nullptr;
-    tail->back = nullptr;
-    
-    // Free memory of the deleted node
-    delete tail;  
-    
+    Node* newTail = tail->back; //store new tail
+    newTail->next == nullptr;
+    newTail->back == nullptr;
+    delete tail;
     return head;
+
 }
 
 int main() {
