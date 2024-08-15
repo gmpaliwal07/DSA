@@ -91,7 +91,7 @@ freopen("output.txt", "w" ,stdout);
 #endif
 vector<int> arr =  {1,2,3,4};
 int k = 3;
-    Node* head = convertToDLL(arr);
+    Node* head = convertToDLL(arr); 
    print(head); 
     
 Node* head1 = deleteKthEle(head,k);
