@@ -27,15 +27,15 @@ Node* reverseLL(Node* head) {
     Node* prev = nullptr;
     Node* current = head;
     Node* next = nullptr;
+while (current != NULL)
+{
+    prev = current->back;
+    current->back = current->next;
+    current->next = prev;
 
-    while (current != nullptr) {
-        next = current->next; // Store the next node
-        current->next = prev; // Reverse the next pointer
-        current->back = next; // Reverse the back pointer
-        prev = current;       // Move prev and current one step forward
-        current = next;
-    }
-    return prev; // New head of the reversed list
+    current = current->back;
+}
+return prev->back;
 }
 
 Node* vectorToLL(vector<int> &arr) {
