@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {
