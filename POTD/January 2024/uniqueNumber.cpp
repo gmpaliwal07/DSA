@@ -8,7 +8,7 @@ using namespace std;
     std::unordered_set<int> uniqueFrequencies;
 
     for (const auto& pair : frequencyMap) {
-        if (uniqueFrequencies.find(pair.second) != uniqueFrequencies.end()) {
+        if (uniqueFrequencies.find(pair.second) != uniqueFrequencies.end() /*this condition iterate and check whether the element is present or not */ ) { 
             return false;
         }
         uniqueFrequencies.insert(pair.second);
