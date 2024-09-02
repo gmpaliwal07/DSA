@@ -60,10 +60,10 @@ freopen("output.txt", "w", stdout);
 #endif
 vector<int> arr = {1,2,3,4};
 int k  =5;
- Node* head = convertArr2DLL(arr);
+ Node* head = convertArrto2ll(arr);
  print(head);
  cout << endl;
- Node* head1 = insertNode(head, k);
- print(head1);
+//  Node* head1 = insertNode(head, k);
+//  print(head1);
 return 0;
 }

@@ -51,6 +51,7 @@ Node* deleteHead(Node* head) {
     delete prev; // in java we don't have to write this 
     return head; 
 }
+
 Node* deleteTail(Node* head) {
     if(head == nullptr || head->next == nullptr) return nullptr;
     Node* tail = head;

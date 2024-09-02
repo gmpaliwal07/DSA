@@ -76,6 +76,7 @@ Node* deleteKthEle(Node* head, int k) {
     delete kNode;
     return head;
 }
+
 void print(Node* head) {
      while(head->next !=nullptr) {
         cout << head->data << " ";
