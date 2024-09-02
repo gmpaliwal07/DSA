@@ -32,6 +32,7 @@ Node* removeTail(Node* head) {
     temp->next = nullptr;
     return head;
 }
+
 int main(int argc, char const *argv[])
 {
 #ifndef ONLINE_JUDGE

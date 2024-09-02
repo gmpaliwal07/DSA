@@ -41,6 +41,8 @@ Node* deleteK(Node* head, int k) {
     }
     return head;
 }
+
+
 int main(int argc, char const *argv[])
 {
 #ifndef ONLINE_JUDGE

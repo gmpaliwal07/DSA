@@ -24,7 +24,7 @@ Node *convertArr2LL(vector<int> &arr)
 {
     Node *head = new Node(arr[0]);
     Node *mover = head;
-    for (auto i = 0; i < arr.size(); i++)
+    for (auto i = 1; i < arr.size(); i++)
     {
         Node *temp = new Node(arr[i]);
         mover->next = temp;
@@ -32,6 +32,8 @@ Node *convertArr2LL(vector<int> &arr)
     }
     return head;
 }
+
+
 
 int main(int argc, char const *argv[])
 {
@@ -41,6 +43,10 @@ int main(int argc, char const *argv[])
 #endif
     vector<int> arr = {23, 12, 45, 12};
     Node *head = convertArr2LL(arr);
+    while(head != nullptr) {
+
     cout << head->data << endl;
+    head = head->next;
+    }
     return 0;
 }

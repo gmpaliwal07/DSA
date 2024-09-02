@@ -20,6 +20,7 @@ Node* insertHead(Node* head, int val){
     Node* temp = new Node(val, head);
     return temp;
 }
+
 int main(int argc, char const *argv[])
 {
 #ifndef ONLINE_JUDGE
