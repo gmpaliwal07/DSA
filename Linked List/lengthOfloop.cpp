@@ -16,41 +16,36 @@ class Node {
         next = nullptr;
     }
 };
-void createCycle(Node* head, int pos) {
-    if (pos == -1) return;
-
-    Node* temp = head;
-    Node* cycleNode = nullptr;
-    int count = 0;
-
-    // Traverse to the node at position `pos`
-    while (temp->next != nullptr) {
-        if (count == pos) {
-            cycleNode = temp;
-        }
-        temp = temp->next;
-        count++;
+Node *vectorToll(vector<int> &arr) {
+    Node* head = new Node(arr[0]);
+    Node* mover = head;
+    for(auto i = 1; i< arr.size(); i++) 
+    {
+        Node* temp = new Node(arr[i]);
+        mover->next = temp;
+        mover = temp;
     }
-
- 
-    if (cycleNode != nullptr) {
+    return head;
+}
+void createCycle(Node *head, int pos) {
+    if(head == nullptr || head->next == nullptr) return;
+    Node* cycleNode = nullptr;
+    Node* temp = head;
+    int cnt =0;
+    while(temp->next != nullptr) {
+        if(cnt == pos) {
+            cycleNode = temp;
+        } 
+        temp = temp->next;
+        cnt++;
+    }
+    if(cycleNode != nullptr) {
         temp->next = cycleNode;
     }
 }
-
-Node* vectorToLL(vector<int> &arr) {
-    Node* head = new Node(arr[0]);
-    Node* prev = head;
-    for(auto it = 1; it< arr.size(); it++) {
-        Node*  temp = new Node(arr[it]);
-        prev->next = temp;
-        prev = temp;
-    }
-    return head;
-    } 
-
-int startingPoint(Node* head) {
-   if(head == nullptr || head->next == nullptr) return -1;
+int lengthOfLoop(Node* head) {
+    Node* temp = head;
+      if(head == nullptr || head->next == nullptr) return -1;
 
    Node* slow = head;
    Node* fast = head;
@@ -71,8 +66,16 @@ int startingPoint(Node* head) {
         slow = slow->next;
         fast = fast->next;
     }
+    
+     int cnt = 1;
+    fast = fast->next; 
+    while (slow != fast) {
+        fast = fast->next;
+        cnt++;
+    }
 
-    return  slow->data;
+    return cnt;
+    
 }
 int main(int argc, char const *argv[])
 {
@@ -80,10 +83,10 @@ int main(int argc, char const *argv[])
 freopen("input.txt", "r", stdin);
 freopen("output.txt", "w", stdout);
 #endif
-vector<int> arr = { 1,2,3,4,5};
-Node* head = vectorToLL(arr);
- createCycle(head, 2);
-cout << startingPoint(head);
-
+vector<int> arr = {1,2,3,4,5};
+Node* head = vectorToll(arr);
+int pos =2;
+createCycle(head,pos);
+cout << lengthOfLoop(head);
 return 0;
 }

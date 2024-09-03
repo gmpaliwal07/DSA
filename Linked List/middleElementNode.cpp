@@ -65,6 +65,8 @@ Node* temp = head;
 
     return slow;
 }
+
+
 int main(int argc, char const *argv[])
 {
 #ifndef ONLINE_JUDGE
@@ -72,9 +74,9 @@ freopen("input.txt", "r" ,stdin);
 freopen("output.txt", "w" ,stdout);
 #endif
 
-    vector<int> arr = {1, 2, 3, 4, 5,6};
+    vector<int> arr = {1, 2, 3, 4, 5, 6};
     Node* head = vectorToDLL(arr);
-    Node* ans = middleElement(head);
+    Node* ans = middle(head);
     cout << ans->data;
     return 0;
 }
