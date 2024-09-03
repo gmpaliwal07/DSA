@@ -8,6 +8,7 @@ char maxOccurence(string s) {
         number = s[i] - 'a';
         arr[number]++;
     }
+    
 
     int maxi = -1, ans =0;
 for(auto i = 0; i < 26; i++) {
