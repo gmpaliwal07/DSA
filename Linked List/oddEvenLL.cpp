@@ -29,11 +29,17 @@ Node* vectorToLL(vector<int> &arr) {
     } 
 Node* oddEvenList(Node* head) {
         if(head == nullptr || head->next == nullptr) return head;
-        while (head != nullptr)
-        {
-            
+        Node* odd = head;
+        Node* even  = head->next;
+        Node* evenHead = head->next;
+        while(odd != nullptr) {
+            odd->next = odd->next->next;
+            even->next = even->next->next;
+            odd = odd->next;
+            even = even->next;
         }
-        
+        odd->next = evenHead;
+        return head;
     }
 int main(int argc, char const *argv[])
 {
@@ -43,5 +49,6 @@ freopen("output.txt", "w", stdout);
 #endif
 vector<int> arr = { 1,2,3,4,5};
 Node* head = vectorToLL(arr);
+Node* newHead = oddEvenList(head);
 return 0;
 }
