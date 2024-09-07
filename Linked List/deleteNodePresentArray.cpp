@@ -27,7 +27,7 @@ Node* modifiedList(Node* head, vector<int> &arr) {
     Node* temp = head;
     Node* prev = nullptr;
     
-    unordered_set<int> toDelete(arr.begin(), arr.end()); // Using a set for faster lookups
+    unordered_set<int> toDelete(arr.begin(), arr.end());
     
     while (temp != nullptr) {
         if (toDelete.count(temp->data)) {
