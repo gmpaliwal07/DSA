@@ -1,1 +1,1 @@
-Stack is empty now.
+-1 3 -1 
