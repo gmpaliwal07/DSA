@@ -4,7 +4,7 @@ string convertToBin(int n){
     string res = "";
     while (n != 1)
     {
-        if(n%2 == 1) res+= '1';
+        if(!(n&1)) res+= '1';
         else res+='0';
         n/=2;
     }
