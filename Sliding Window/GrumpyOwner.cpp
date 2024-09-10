@@ -19,7 +19,7 @@ int satisfiedCustomer(vector<int> &customer, vector<int> &grumpy,int m) {
 
         // Slide remaining elements
         for (int i = minutes; i < customers.size(); i++) {
-            if (grumpy[i - minutes] == 1) {
+            if (grumpy[i - minutes] == 1) { 
                 additional_satisfied -= customers[i - minutes];
             }
             if (grumpy[i] == 1) {
