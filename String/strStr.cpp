@@ -20,6 +20,7 @@ int strStr(const string haystack, const string needle) {
     for(auto i = 0; i < haystack.size(); i++) {
         if(haystack.substr(i, needle.size()) == needle) return i;
     }
+    
     return -1;
     }
     //     return -1;
