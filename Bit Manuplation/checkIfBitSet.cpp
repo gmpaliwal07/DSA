@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
     freopen("output.txt", "w", stdout);
 #endif
 
-    int n = 13, i = 1;
+    int n = 10, i = 1;
 
     cout << (CheckForSet(n, i) ? "true" : "false") << endl;
 
