@@ -8,6 +8,7 @@ int prettyNumber(int l,int r) {
             return i;
         }
 
+        
     }
 }
 int main(int argc, char const *argv[])
