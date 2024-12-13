@@ -18,7 +18,7 @@ double findMaxAverage(vector<int> &nums, int k) {
 int main(int argc, char const *argv[])
 {
 #ifndef ONLINE_JUDGE
-freopen("input.txt" ,"r", stdin);
+freopen("input.txt" ,"r", stdin);   
 freopen("output.txt", "w", stdout);
 #endif
 vector<int> nums = {1,12,-5,-6,50,3};

@@ -40,7 +40,7 @@ bool hasCycle(Node* head) {
             return true;
     }
 
-    return false;
+    return false;   
 }
 
 void createCycle(Node* head, int pos) {
