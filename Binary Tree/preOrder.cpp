@@ -11,7 +11,7 @@ using namespace std;
   };
 
 
-preorder(vector<int> &ans, TreeNode* root) {
+void preorder(vector<int> &ans, TreeNode* root) {
     if (root == NULL) {
             return;
         }
