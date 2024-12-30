@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-    vector<int> bfsOfGraph(int V, vector<int> adj[]) {
+    vector<int> bfsOfGraph(int V, vector<nt> adj[])i {
         int vis[V] = {0}; 
         vis[0] = 1; 
         queue<int> q;

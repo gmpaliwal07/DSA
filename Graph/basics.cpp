@@ -1,31 +1,46 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(int argc, char const *argv[])
-{
+
+template <typename T>
+class Graph {
+public:
+    unordered_map<T, list<T>> adj;
+
+    // Constructor
+    Graph() {}
+
+    // Add edge to the graph
+    void add_edge(T n1, T n2, bool bidir = true) {
+        adj[n1].push_back(n2);
+        if (bidir) adj[n2].push_back(n1);
+    }
+
+    // Print adjacency list
+    void print() {
+        for (auto it : adj) {
+            cout << it.first << "-->";
+            for (auto ele : it.second) {
+                cout << ele << "-";
+            }
+            cout << endl;
+        }
+    }
+};
+
+int main(int argc, char const *argv[]) {
 #ifndef ONLINE_JUDGE
-freopen("input.txt", "r", stdin);
-freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
-int nodes = 5, edges =6;
-// matrix method
-// int adj[nodes+1][edges+1];
-// //graph with complexity n^2;
-// for(auto i = 0; i < edges; i++){
-//     int u, v;
-//     cin >> u >> v;
-//     adj[u][v] = 1;
-//     adj[v][u] = 1;
 
-// }
+    Graph<int> g;
+    g.add_edge(1, 2);
+    g.add_edge(8, 2);
+    g.add_edge(2, 3);
+    g.add_edge(4, 6);
+    g.add_edge(6, 9);
+    g.add_edge(7, 1);
 
-//list spcae = O(2E) and O(n);
-vector<int> adj[nodes+1];
-for(auto i = 0; i < edges; i ++) {
-    int u , v;
-    cin >> u >> v;
-    adj[u].push_back(v);
-    adj[v].push_back(u);
-
-}
-return 0;
+    g.print();
+    return 0;
 }
