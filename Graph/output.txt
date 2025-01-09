@@ -1,2 +1,1 @@
-Time: 0.063ms
-Found
+0
