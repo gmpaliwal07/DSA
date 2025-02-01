@@ -36,12 +36,25 @@ file_i_o();
 clock_t end = clock();
 cout<<"Time: "<<(double)(end-begin)/CLOCKS_PER_SEC*1000<<"s\n";
 #endif
-
-
-string word;
-cin >> word;
-if(islower(word[0])) word[0] = word[0]-32;
-cout<<word;
+int t;
+cin>>t;
+while (t--)
+{
+    string s;
+    cin>>s;
+    int n=s.length();
+    int i=0;
+    while (i<n and s[i]=='0') i++;
+    int j=n-1;
+    while (j>=0 and s[j]=='0') j--;
+    int ans=0;
+    for (int k = i; k <= j; k++)
+    {
+        if(s[k]=='0') ans++;
+    }
+    cout<<ans<<endl;
+    
+}
 
 
 return 0;

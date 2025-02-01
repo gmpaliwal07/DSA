@@ -36,13 +36,28 @@ file_i_o();
 clock_t end = clock();
 cout<<"Time: "<<(double)(end-begin)/CLOCKS_PER_SEC*1000<<"s\n";
 #endif
+string s;
+cin >> s;
 
 
-string word;
-cin >> word;
-if(islower(word[0])) word[0] = word[0]-32;
-cout<<word;
+    vector<char> digits;
 
+
+    for (char c : s) {
+        if (c != '+') {
+            digits.push_back(c);
+        }
+    }
+
+
+     sort(digits.begin(), digits.end());
+
+     loop(i,0,digits.size()) {
+        cout << digits[i];
+        if (i != digits.size() - 1) {
+            cout << "+";
+        }
+    }
 
 return 0;
 }

@@ -36,13 +36,14 @@ file_i_o();
 clock_t end = clock();
 cout<<"Time: "<<(double)(end-begin)/CLOCKS_PER_SEC*1000<<"s\n";
 #endif
-
-
-string word;
-cin >> word;
-if(islower(word[0])) word[0] = word[0]-32;
-cout<<word;
-
+int n;
+cin >> n;
+vector<int> arr;
+for(auto i =0 ; i  <=n; i++){
+    int a;
+    cin >> a;
+    arr.push_back(a);
+}
 
 return 0;
 }
