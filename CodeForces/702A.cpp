@@ -28,6 +28,21 @@ freopen("input.txt", "r", stdin);
 freopen("output.txt", "w", stdout);
 #endif
 }
+int MaxLengthSubarray(vector<int> &nums) {
+
+    int cnt = 1, maxi = 0;
+    loop(i,1,nums.size()){
+        if(nums[i] >  nums[i-1]){
+            cnt++;
+        }
+        else {
+        maxi = max(maxi,cnt);
+        cnt = 1;
+        }
+    }
+    maxi = max(maxi, cnt);
+    return maxi;
+}
 int main(int argc, char const *argv[])
 {
 clock_t begin = clock();
@@ -39,11 +54,14 @@ cout<<"Time: "<<(double)(end-begin)/CLOCKS_PER_SEC*1000<<"s\n";
 int n;
 cin >> n;
 vector<int> arr;
-for(auto i =0 ; i  <=n; i++){
-    int a;
+loop(i,0,n) {
+   int a;
     cin >> a;
     arr.push_back(a);
 }
+cout << MaxLengthSubarray(arr);
+
+
 
 return 0;
 }
