@@ -42,7 +42,6 @@ if(!leftoright) reverse(level.begin(), level.end());
 
             leftoright = !leftoright
         }
-
         return ans; 
     }
 int main(int argc, char const *argv[])
