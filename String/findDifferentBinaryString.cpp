@@ -56,5 +56,6 @@ int main() {
         loop(i, 0, n) cin >> nums[i];
         cout << findDifferentBinaryString(nums) << endl;
     }
+    
     return 0;
 }
