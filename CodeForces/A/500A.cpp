@@ -28,8 +28,6 @@ freopen("input.txt", "r", stdin);
 freopen("output.txt", "w", stdout);
 #endif
 }
-
-
 int main(int argc, char const *argv[])
 {
 clock_t begin = clock();
@@ -38,21 +36,23 @@ file_i_o();
 clock_t end = clock();
 cout<<"Time: "<<(double)(end-begin)/CLOCKS_PER_SEC*1000<<"s\n";
 #endif
-int n, m;
-    cin >> n >> m;
+int n, t;
+cin >> n >> t;
 
-    int min_moves = (n + 1) / 2; // Minimum possible moves (ceil(n/2))
+vector<int> co_point(n - 1);
+for (int i = 0; i < n - 1; i++) {
+    cin >> co_point[i];
+}
 
-    // Find the smallest multiple of m that is >= min_moves
-    while (min_moves % m != 0) {
-        min_moves++;
-    }
+int i = 1;
+while (i < t) {
+    i += co_point[i - 1];  // Correct indexing
+}
 
-    if (min_moves > n) {
-        cout << -1 << endl;
-    } else {
-        cout << min_moves << endl;
-    }
+if (i == t)
+    cout << "YES\n";
+else
+    cout << "NO\n";
 
 return 0;
 }
