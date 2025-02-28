@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
 freopen("input.txt", "w", stdout);
 freopen("output.txt", "w",stdout);
 #endif
-vector<int> arr ={2,3,41,-2};
+vector<int> arr ={1,3,5};
     std::vector<int> prefix = prefixSumArray(arr);
 for(auto it : prefix) {
     cout << it << " ";
