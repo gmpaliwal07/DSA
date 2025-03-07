@@ -1,2 +1,5 @@
-Time: 0.065s
 YES
+NO
+YES
+NO
+NO
