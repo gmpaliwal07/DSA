@@ -1,5 +1,2 @@
-YES
-NO
-YES
-NO
-NO
+Time: 0.112s
+10:30

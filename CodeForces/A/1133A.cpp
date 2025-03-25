@@ -36,36 +36,24 @@ file_i_o();
 clock_t end = clock();
 cout<<"Time: "<<(double)(end-begin)/CLOCKS_PER_SEC*1000<<"s\n";
 #endif
-ll t;
-cin >> t;
-while(t--) {
-    string p,h;
-   ll tag=0;
-    cin>>p>>h;
-    ll lenP=p.size();
-    ll lenH=h.size();
-    if(lenP>lenH)
-    {
-        cout<<"NO"<<endl;
-        continue;
-    }
-    sort(p.begin(),p.end());
-    for(auto i=0; i<=(lenH-lenP); i++)
-    {
-        string s=h.substr(i,lenP);
-        sort(s.begin(),s.end());
-        if(s==p)
-        {
-            tag=1;
-            break;
-        }
-    }
-    if(tag==1)
-        cout<<"YES"<<endl;
-    else
-        cout<<"NO"<<endl;
+string t1, t2;
+cin >> t1 >> t2;
 
-   
-}
+
+// Parse first time
+ll h1 = stoi(t1.substr(0,2));
+ll m1 = stoi(t1.substr(3,2));
+
+// Parse second time
+ll h2 = stoi(t2.substr(0,2));
+ll m2 = stoi(t2.substr(3,2));
+
+// Calculate middle time
+ll time1 = h1*60 + m1;
+ll time2 = h2*60 + m2;
+ll t = (time1 + time2)/2;
+cout << setfill('0') << setw(2) << t/60 << ":" << setfill('0') << setw(2) << t%60 << endl;
+    
+
 return 0;
 }
