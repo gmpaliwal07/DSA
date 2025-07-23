@@ -5,7 +5,7 @@ bool containsDuplicates(vector<int> &nums, int k ) {
 
     unordered_map<int, int> window;
     for(auto i = 0; i < nums.size(); i++) {
-        if(window.find(nums[i]) != window.find()) flag = true;
+        if(window.find(nums[i]) != window.end()) flag = true;
 
         window.insert(nums[i]);
 

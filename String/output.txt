@@ -1,2 +1,2 @@
-Time: 0.041s
-leetcode
+Time: 0.086s
+19
