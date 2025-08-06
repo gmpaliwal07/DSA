@@ -28,27 +28,54 @@ freopen("input.txt", "r", stdin);
 freopen("output.txt", "w", stdout);
 #endif
 }
+ void build(int ind, int low, int high, const vector<int>& baskets,
+               vector<int>& seg) {
+        if (low == high) {
+            seg[ind] =
+                baskets[low]; // Fix: Use baskets[low] instead of baskets[ind]
+            return;
+        }
+        int mid = (low + high) / 2;
+        build(2 * ind + 1, low, mid, baskets, seg); // Fix: Changed high to mid
+        build(2 * ind + 2, mid + 1, high, baskets, seg);
+        seg[ind] = max(seg[2 * ind + 1], seg[2 * ind + 2]);
+    }
+
+    bool querySegmentTree(int ind, int low, int high, vector<int>& seg,
+                          int val) {
+        if (seg[ind] < val) {
+            return false;
+        }
+        if (low == high) {
+            seg[ind] = -1;
+            return true;
+        }
+
+        int mid = (low + high) / 2;
+        bool placed;
+        if (seg[2 * ind + 1] >= val) {
+            placed = querySegmentTree(2 * ind + 1, low, mid, seg, val);
+
+        } else {
+            placed = querySegmentTree(2 * ind + 2, mid + 1, high, seg, val);
+        }
+
+        seg[ind] = max(seg[2 * ind + 1], seg[2 * ind + 2]);
+        return placed;
+    }
+
+
 int numOfUnplacedFruits(vector<int>& fruits, vector<int>& baskets) {
-        int n = fruits.size();
-        vector<bool> used(n , false);
+       vector<int> seg(4 * fruits.size(), 0);
 
-        int ans = 0;
-        for(auto i = 0; i < n; i++ ){
-            int fruit = fruits[i];
-            bool place = false;
-
-            for(auto j = 0; j < n; j++ ){
-                if(!used[j] && baskets[j] >= fruit) {
-                    used[j] = true;
-                    place = true;
-                    break;
-                }
-            }
-            if(!place) {
-                ans++;
+        build(0, 0, fruits.size() - 1, baskets, seg);
+        int unplaced = 0;
+        for (auto it : fruits) {
+            if (!querySegmentTree(0, 0, fruits.size() - 1, seg, it)) {
+                unplaced++;
             }
         }
-        return ans;
+        return unplaced;
     }
 int main(int argc, char const *argv[])
 {
