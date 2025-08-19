@@ -30,6 +30,8 @@ freopen("output.txt", "w", stdout);
 }
 
 
+
+
 int numberOfWays(int n, int x) {
     const int MOD = 1e+7;
     vector<int> dp(n + 1, 0);
