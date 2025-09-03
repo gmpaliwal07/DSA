@@ -26,7 +26,6 @@ void file_i_o()
 #endif
 }
 
-// Check if rectangle defined by A (upper-left) and B (lower-right) has no other points
 bool isRectangleEmpty(pair<int, int> &A, pair<int, int> &B, vector<vector<int>> &points)
 {
     for (auto &p : points)
@@ -79,7 +78,7 @@ int main(int argc, char const *argv[])
 #endif
 
     vector<vector<int>> points = {{6, 2}, {4, 4}, {2, 6}};
-    cout << numberOfPairs(points); // Output will be 2
+    cout << numberOfPairs(points); // Output 2
 
     return 0;
 }
