@@ -80,7 +80,7 @@ public:
                     tolearn++;
             }
             ans = min(ans, tolearn);
-        }~
+        }
 
         return ans;
     }
