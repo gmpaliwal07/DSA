@@ -40,9 +40,9 @@ public:
         int curr_empty = numBottles;
         while (curr_empty >= numExchange)
         {
-            int newBottles = curr_empty / numExchange;
-            sum += newBottles;
-            curr_empty = newBottles + (curr_empty % numExchange);
+            int new_bottle = curr_empty / numExchange;
+            sum += new_bottle;
+            curr_empty = new_bottle + (curr_empty % numExchange);
         }
         return sum;
     }
