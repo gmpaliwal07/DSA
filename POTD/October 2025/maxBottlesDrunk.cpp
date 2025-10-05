@@ -36,15 +36,16 @@ class Solution
 public:
     int maxBottlesDrunk(int numBottles, int numExchange)
     {
-           int sum = numBottles;
+        int sum = numBottles;
         int curr_empty = numBottles;
 
         while (curr_empty >= numExchange)
         {
-            curr_empty -= numExchange; 
-            sum += 1;                  
-            curr_empty += 1;            
-numExchange++;        }
+            curr_empty -= numExchange;
+            sum += 1;
+            curr_empty += 1;
+            numExchange++;
+        }
 
         return sum;
     }
