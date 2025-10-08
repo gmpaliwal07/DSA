@@ -39,7 +39,7 @@ public:
     vector<int> successfulPairs(vector<int> &spells, vector<int> &potions, long long success)
     {
         vector<int> ans;
-        sort(potions.begin(), potions.end()); // Sort potions ascending
+        sort(potions.begin(), potions.end()); 
         int n = potions.size();
 
         for (int spell : spells)
