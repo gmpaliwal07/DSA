@@ -34,19 +34,33 @@ void file_i_o()
 class Solution
 {
 public:
-    int largestPerimeter(vector<int> &nums)
+    int minOperations(vector<int> &nums)
     {
-        sort(nums.begin(), nums.end(), greater<int>());
+        if (std::find(nums.begin(), nums.end(), 1) != nums.end())
+            return n - 1; // Each non-1 can be made 1 in one operation
 
-        for (int i = 0; i < nums.size() - 2; i++)
+        int g = std::accumulate(nums.begin() + 1, nums.end(), nums[0], std::gcd);
+
+        if (g != 1)
+            return -1;
+
+        int n = nums.size();
+        int minLen = INT_MAX;
+
+        for (int i = 0; i < n; i++)
         {
-            if (nums[i] < nums[i + 1] + nums[i + 2])
+            int g = nums[i];
+            for (int j = i + 1; j < n; j++)
             {
-                return nums[i] + nums[i + 1] + nums[i + 2];
+                g = std::gcd(g, nums[j]);
+                if (g == 1)
+                {
+                    minLen = std::min(minLen, j - i + 1);
+                    break;
+                }
             }
         }
-
-    return 0;
+        return n + minLen - 2;
     }
 };
 int main(int argc, char const *argv[])
@@ -58,9 +72,9 @@ int main(int argc, char const *argv[])
     cout << "Time: " << (double)(end - begin) / CLOCKS_PER_SEC * 1000 << "s\n";
 #endif
 
-    vector<int> nums = {2, 1, 2};
+    vector<int> nums = {2, 6, 3, 4};
     Solution sol;
-    cout << sol.largestPerimeter(nums);
+    cout << sol.minOperations(nums);
 
     return 0;
 }

@@ -31,24 +31,30 @@ void file_i_o()
     freopen("output.txt", "w", stdout);
 #endif
 }
+
 class Solution
 {
 public:
-    int largestPerimeter(vector<int> &nums)
+    int smallestNumber(int n)
     {
-        sort(nums.begin(), nums.end(), greater<int>());
-
-        for (int i = 0; i < nums.size() - 2; i++)
+        int ans = 0;
+        int x = n;
+        if (x == 0)
         {
-            if (nums[i] < nums[i + 1] + nums[i + 2])
-            {
-                return nums[i] + nums[i + 1] + nums[i + 2];
-            }
+            return 1;
         }
 
-    return 0;
+        else
+        {
+            if(((x+1) & x == 0) && x >=n){
+
+                ans = x;
+            }
+        }
+        return x;
     }
 };
+
 int main(int argc, char const *argv[])
 {
     clock_t begin = clock();
@@ -57,10 +63,9 @@ int main(int argc, char const *argv[])
     clock_t end = clock();
     cout << "Time: " << (double)(end - begin) / CLOCKS_PER_SEC * 1000 << "s\n";
 #endif
-
-    vector<int> nums = {2, 1, 2};
     Solution sol;
-    cout << sol.largestPerimeter(nums);
+
+    cout << sol.smallestNumber(n);
 
     return 0;
 }
